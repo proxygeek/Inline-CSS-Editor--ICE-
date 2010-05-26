@@ -1,0 +1,49 @@
+body {
+	background:white;
+}
+
+	div#container{
+		background:gray;
+		font-size:80%;
+		border:	black;
+		border:1px solid black;
+	}
+
+		div#header{
+			height:60px;
+			padding-top:2em;;
+		}
+
+			div#header h1{
+				display:inline;
+			}
+
+			input#edit_button{
+				display:inline;
+				float:right;
+			}
+
+		div#content_pane{
+			background:gray;
+			font-size:80%;
+			border:	black;
+			border:1px solid black;
+			padding:2em;
+			margin:3em;
+		}
+
+			div#content_pane p{
+				font-size:150%;
+				font-weight:bold;
+			}
+
+
+		#vertical_slide{
+			background: #D0C8C8;
+			color: #8A7575;
+			padding: 10px;
+			border: 2px solid #F3F1F1;
+			font-weight: bold;
+			width:50%;
+		}
+

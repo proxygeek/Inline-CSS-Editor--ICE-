@@ -1,3 +1,20 @@
+/*
+---
+description: An inline CSS editor for individual DOM-elements
+
+license: MIT-style
+
+authors:
+- Proxygeek
+
+requires:
+- mootools-1.2.4-core
+
+provides: NoClassYet
+
+...
+*/
+
 window.addEvent('domready', function() {
 
 	var edit_func= function(e_event){

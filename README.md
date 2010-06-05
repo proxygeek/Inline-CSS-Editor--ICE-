@@ -10,7 +10,8 @@ How to use
 Dependencies: mootools-1.2.4-core-nc  (later versions of the MooTools core should work too)
    
 Summary: Include ice.js along with mootools-1.2.4-core.js and call the create_ice() method on any element you want to be editable.
-	 Also include a button/link which will toggle the state between Edit/Normal mode by calling edit_mode_toggle method.
+   
+Also include a button/link which will toggle the state between Edit/Normal mode by calling edit_mode_toggle method.
    
 Steps:
       

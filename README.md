@@ -3,40 +3,54 @@ Inline CSS Editor (ICE)
 
 This plugin provides a simple way to edit the CSS properties of any element on the document, inline. The document can be set to *EDIT* mode on click of a button. Once in the *EDIT* mode, a click on any of the elements in the editable section would open up a dialog asking for the new CSS property for the clicked element.
 
-If an image is found within the description, that becomes the screenshot of the plugin. Screenshots are optional but encouraged, given the plugin has some visual interaction. The screenshot can be of any size, but try to keep it of about 200x100.
-
 ![Screenshot](http://www.proxygeek.org/ice/ICE_Demo_Screenshot_1.png)
 
 How to use
 ----------
-0) Dependencies: mootools-1.2.4-core-nc  (later versions of the MooTools core should work too)
-1) Download and extract the files in your project folder.
-2) By default, it allows only for the Background Color of an element to be changed. Other properties can be added easily under *css_options* in
-   **ice.js**
+Dependencies: mootools-1.2.4-core-nc  (later versions of the MooTools core should work too)
+   
+Summary: Include ice.js along with mootools-1.2.4-core.js and call the create_ice() method on any element you want to be editable.
+	 Also include a button/link which will toggle the state between Edit/Normal mode by calling edit_mode_toggle method.
+   
+Steps:
+      
+	1) Download and extract the files(MooTools core & ice.js) in your project folder.
+   
+	2) Include a link/button to toggle b/n EDIT/NORMAL modes by attaching the edit_mode_toggle method to it
 
-	var edit_func= function(e_event){
-	    e_event.stopPropagation(); // this will prevent the event to bubble up, and fire the parent's click e_event.
-	......
-	......
-	    css_options.set('html','Background: <input type="text" name="cssBg" value="" id="cssBg" class="no_click"/> 
-				    <br/> 
-				    <input type="button" name="setCSS" value="Change it!" id="setCSS" />');
-	......
-	......
-	};
-	
-3) In the HTML file, there are 3 set of elements:
-	a) EDIT button (id="edit_button"):
-			<input type="button" name="edit_button" value="Edit" id="edit_button" />
-	b) EDITABLE section (class="editable"):
-			<div id="content_pane" class="editable">
-				<!-- All element in this section will be editable after the user clicks the EDIT button above-->
-			</div>
+		$('edit_button').addEvent('click', edit_mode_toggle);
 
+	3) Call the create_ice() method on the elements you want to support the CSS editing
+  
+		$('YourElementID').addEvent('click',function(){
+					event.stopPropagation();
+					this.create_ice();
+		});
+ 
+	4) You can choose the CSS properties available for editing by sending them as options while calling create_ice()
+  
+	   For example, to have color, width and height available, you can use:
+				this.create_ice({
+					css_prop_1:'color',
+					css_prop_2:'width',
+					css_prop_3:'height',
+					css_prop_4:'background'
+				});
+   
 Demo
 ----
-You can check the code and the working demo at http://mootools.net/shell/Ea9Kv/
+You can check the code and the working demo at http://nextfive.net/projects/ice/ice_demo.html
 
+
+Changes
+-------
+Changes in this version:
+	a) Code converted from inline to class
+	b) Class provides options for choosing the CSS properties to be made editable
+
+Issues
+------
+	a) There probably will be many. Feel free to fork and change. Or drop me a line.
 
 Notes
 -----
